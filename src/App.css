@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd, input {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body, main{
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+    --main: hsl(222, 26%, 31%);
+    --toggle: hsl(223, 31%, 20%);
+    --screen: hsl(224, 36%, 15%);
+    --key: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-red: hsl(6, 63%, 50%);
+    --dark-red: hsl(6, 70%, 34%);
+    --light-gray-key: hsl(30, 25%, 89%);
+    --gray-orange-key: hsl(28, 16%, 65%);
+    --gray-blue: hsl(221, 14%, 31%);
+}
+
+main{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-1{
+    background-color: hsl(222, 26%, 31%);
+}
+
+.theme-2{
+    background-color: hsl(0, 0%, 90%);
+}
+
+.theme-3{
+    background-color: hsl(268, 75%, 9%);
+}
+
+.app{
+    width: min(90vw, 600px);
+}
+
+header{ 
+    display: flex;
+    justify-content:  space-between;
+}
+
+.title-theme-1{
+    color: white;
+}
+
+.title-theme-2{
+    color: hsl(60, 10%, 19%);
+}
+
+.title-theme-3{
+    color:hsl(52, 100%, 62%);
+}
+
+.tri-toggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    line-height: 0;
+    padding: .3rem;
+    margin-left: 2rem;
+}
+
+.toggle-bg-1, .keypad-bg-1{
+    background-color: hsl(223, 31%, 20%);
+}
+
+.toggle-bg-2, .keypad-bg-2{
+    background-color: hsl(0, 5%, 81%);
+}
+
+.screen-bg-1{
+    background-color: hsl(224, 36%, 15%);
+    color: white;
+}
+
+.screen-bg-2{
+    background-color: hsl(0, 0%, 93%);
+    color: hsl(60, 10%, 19%);
+}
+
+.screen-bg-3{
+    color: hsl(60, 10%, 19%);
+}
+
+.toggle-bg-3, .keypad-bg-3, .screen-bg-3{
+    background-color: hsl(268, 71%, 12%);
+}
+
+.theme-switch-container{
+    display: flex;
+    align-items: center;
+}
+
+.button{
+  height: 15px;
+  width: 15px;
+  appearance: none;
+  background-color: hsl(6, 63%, 50%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.input-holder-1, .input-holder-2, .input-holder-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.input-holder-2, .input-holder-3{
+    margin-left: .5rem;
+}
+
+label{
+    position: absolute;
+    top: -1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screen{
+    margin-top: 2rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    padding: 1.6rem 1.2rem 1.4rem 1.2rem; 
+    border-radius: .6rem;
+    font-size: 3rem;
+    line-height: 0;
+    
+}
+
+.keypad{
+    margin-top: 1.4rem;
+    padding: 1.3rem;
+    border-radius: .6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.buttons{
+    height: 60px;
+    border-radius: .3rem;
+    font-size: 2rem;
+    border: none;
+    line-height: 0;
+    padding-top: .5rem;
+}
+
+.btn-1{
+    background-color: hsl(30, 25%, 89%);
+    box-shadow:0 5px 0 hsl(28, 16%, 65%);
+    color: hsl(221, 14%, 31%);
+}
+
+.btn-2{
+    background-color:  hsl(45, 7%, 89%);
+    box-shadow:0 5px 0 hsl(35, 11%, 61%);
+    color: hsl(60, 10%, 19%);
+}
+
+.btn-3{
+    background-color: hsl(281, 89%, 26%);
+    box-shadow:0 5px 0  hsl(285, 91%, 52%);
+    color: hsl(52, 100%, 62%);
+}
+
+.bot-btn{
+    grid-column:span 2;
+    padding: .7rem .2rem;
+    border-radius: .3rem;
+    text-align: center;
+    border: none;
+}
+
+.bot-btn, .del-1, .del-2, .del-3{
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    vertical-align: baseline;
+}
+
+.del-1, .res-1, .eq-1{
+    color: white;
+}
+
+
+
+.del-2, .res-2, .eq-2{
+    color: white;
+}
+
+
+.del-1, .res-1{
+    background-color:  hsl(225, 21%, 49%);
+    box-shadow:0 5px 0 hsl(224, 28%, 35%);
+    color: white;
+}
+
+.del-2, .res-2{
+    background-color:  hsl(185, 42%, 37%);
+    box-shadow:0 5px 0 hsl(185, 58%, 25%);
+    color: white;
+}
+
+.del-3, .res-3{
+    background-color:  hsl(281, 89%, 26%);
+    box-shadow:0 5px 0 hsl(285, 91%, 52%);
+    color: white;
+}
+
+.eq-1{
+    background-color:  hsl(6, 63%, 50%);
+    box-shadow:0 5px 0 hsl(6, 70%, 34%);
+}
+
+.eq-2{
+    background-color:  hsl(25, 98%, 40%);
+    box-shadow:0 5px 0 hsl(25, 99%, 27%);
+}
+
+.eq-3{
+    background-color:  hsl(176, 100%, 44%);
+    box-shadow:0 5px 0 hsl(177, 92%, 70%);
+}
